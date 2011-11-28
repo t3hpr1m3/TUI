@@ -1,0 +1,1 @@
+MainMenuBarArtFrame:Hide()

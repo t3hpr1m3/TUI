@@ -1,0 +1,7 @@
+## Interface: 40200
+## Author: Titus
+## Title: TUI
+## SavedVariables: TUIData
+## SavedVariablesPerCharacter: TUIDataPerChar
+
+TUI.xml

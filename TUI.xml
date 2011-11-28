@@ -1,0 +1,13 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="core\init.lua"/>
+	<Script file="core\extensions.lua"/>
+	<Script file="media\media.lua"/>
+	<Script file="skins\default.lua"/>
+	<Script file="modules\panels.lua"/>
+	<Script file="modules\maps\minimap.lua"/>
+	<Script file="modules\actionbars\init.lua"/>
+	<Script file="modules\actionbars\styling.lua"/>
+	<Script file="modules\actionbars\bar1.lua"/>
+	<Script file="modules\actionbars\bar2.lua"/>
+	<Script file="modules\actionbars\hide.lua"/>
+</Ui>

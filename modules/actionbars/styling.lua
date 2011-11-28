@@ -1,3 +1,4 @@
+local F, C = unpack(select(2, ...))
 
 local function style_button(self)
 	local name = self:GetName()
@@ -6,11 +7,11 @@ local function style_button(self)
 	local Flash = _G[name.."Flash"]
 	local Icon = _G[name.."Icon"]
 	local normal = _G[name.."NormalTexture"]
-	local skin = TUI:GetSkin()
+	local skin = F.GetSkin()
 	Flash:SetTexture("")
 	Button:SetNormalTexture("")
 	Border:Hide()
-	Border = TUI.noop
+	Border = F.noop
 
 	if not _G[name.."Panel"] then
 		if Button:GetHeight() ~= skin.buttonSize and not InCombatLockdown() then

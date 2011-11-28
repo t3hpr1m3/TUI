@@ -1,9 +1,11 @@
-local skin = TUI:GetSkin()
+local F, C = unpack(select(2, ...))
+
+local skin = F.GetSkin()
 local TUIBar1 = CreateFrame("Frame", "TUIBar1", UIParent, "SecureHandlerStateTemplate")
-TUIBar1:SetPoint("BOTTOM", 0, TUI.Scale(26))
+TUIBar1:SetPoint("BOTTOM", 0, F.Scale(26))
 TUIBar1:SetWidth((skin.buttonSize * 18) + (skin.buttonSpacing * 17))
 TUIBar1:SetHeight((skin.buttonSize * 2) + (skin.buttonSpacing * 3))
---TUIBar1:SetHeight(TUI.Scale(80))
+--TUIBar1:SetHeight(F.Scale(80))
 TUIBar1:SetFrameStrata("BACKGROUND")
 TUIBar1:SetFrameLevel(1)
 TUIBar1:Skin()
@@ -35,7 +37,7 @@ TUIBar1:SetScript("OnEvent", function(self, event, ...)
 
 		--RegisterStateDriver(self, "page", GetBar())
 	elseif event == "PLAYER_ENTERING_WORLD" then
-		local skin = TUI:GetSkin()
+		local skin = F.GetSkin()
 		local button
 		for i = 1, 12 do
 			button = _G["ActionButton"..i]

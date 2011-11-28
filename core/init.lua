@@ -1,9 +1,8 @@
-local addon, opts = ...
+local addon, engine = ...
 
-opts[1] = {} -- functions/constants
-opts[2] = {} -- config
+engine[1] = {} -- functions/constants
+engine[2] = {} -- config
 
-TUI = {
-	["CONSTANTS"] = opts[1],
-	["CONFIG"] = opts[2]
-}
+TUI = engine
+
+local F, C = unpack(select(2, ...))

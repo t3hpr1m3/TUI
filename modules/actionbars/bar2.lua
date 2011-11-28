@@ -1,9 +1,11 @@
+local F, C = unpack(select(2, ...))
+
 local bar = TUIBar1
 MultiBarBottomLeft:SetParent(bar)
 
 for i=1, 12 do
 	local Button = _G["MultiBarBottomLeftButton"..i]
-	local skin = TUI:GetSkin()
+	local skin = F.GetSkin()
 	--TUI.Size(Button, skin.buttonSize)
 	Button:ClearAllPoints()
 	Button:SetFrameStrata("BACKGROUND")

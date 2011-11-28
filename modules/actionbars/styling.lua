@@ -1,33 +1,39 @@
 
 local function style_button(self)
 	local name = self:GetName()
-	print("styling: "..name)
+	local Button = self
 	local Border = _G[name.."Border"]
 	local Flash = _G[name.."Flash"]
 	local Icon = _G[name.."Icon"]
+	local normal = _G[name.."NormalTexture"]
 	local skin = TUI:GetSkin()
 	Flash:SetTexture("")
-	self:SetNormalTexture("")
+	Button:SetNormalTexture("")
 	Border:Hide()
-	self:SetBackdropBorderColor(0, 0, 0, 0)
-	TUI.Size(self, skin.buttonSize)
+	Border = TUI.noop
 
 	if not _G[name.."Panel"] then
-		if self:GetHeight() ~= skin.buttonSize and not InCombatLockdown() then
-			TUI.Size(self, skin.buttonSize)
+		if Button:GetHeight() ~= skin.buttonSize and not InCombatLockdown() then
+			Button:SetSize(skin.buttonSize, skin.buttonSize)
 		end
 
-		local panel = CreateFrame("Frame", name.."Panel", self)
-		panel:SetPoint("CENTER", self)
-		panel:Size(skin.buttonSize)
+		local panel = CreateFrame("Frame", name.."Panel", Button)
+		panel:SetPoint("CENTER", Button)
+		panel:SetSize(skin.buttonSize, skin.buttonSize)
 		panel:SetFrameStrata("BACKGROUND")
+		panel:SetFrameStrata(Button:GetFrameStrata())
+		panel:SetFrameLevel(Button:GetFrameLevel() - 1)
 		panel:Skin()
-		panel:SetFrameStrata(self:GetFrameStrata())
-		panel:SetFrameLevel(self:GetFrameLevel() - 1)
 
 		Icon:SetTexCoord(.08, .92, .08, .92)
-		Icon:SetPoint("TOPLEFT", self, 3, -3)
-		Icon:SetPoint("BOTTOMRIGHT", self, -3, 3)
+		Icon:SetPoint("TOPLEFT", Button, 2, -2)
+		Icon:SetPoint("BOTTOMRIGHT", Button, -2, 2)
+		--Icon:Hide()
+	end
+	if normal then
+		normal:ClearAllPoints()
+		normal:SetPoint("TOPLEFT")
+		normal:SetPoint("BOTTOMRIGHT")
 	end
 	--TUI.Skin(self)
 end

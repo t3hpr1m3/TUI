@@ -1,6 +1,6 @@
 local TUIMinimap = CreateFrame("Frame", "TUIMinimap", UIParent)
 TUIMinimap:RegisterEvent("ADDON_LOADED")
-TUIMinimap:SetPoint("TOPRIGHT", TUI.Scale(-200), TUI.Scale(-200))
+TUIMinimap:SetPoint("TOPRIGHT", TUI.Scale(-50), TUI.Scale(-50))
 TUIMinimap:Size(200)
 TUIMinimap:SetFrameStrata("BACKGROUND")
 TUIMinimap:SetFrameLevel(1)

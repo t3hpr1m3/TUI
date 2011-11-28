@@ -6,7 +6,7 @@ MultiBarBottomLeft:SetParent(bar)
 for i=1, 12 do
 	local Button = _G["MultiBarBottomLeftButton"..i]
 	local skin = F.GetSkin()
-	--TUI.Size(Button, skin.buttonSize)
+	--F.Size(Button, skin.buttonSize)
 	Button:ClearAllPoints()
 	Button:SetFrameStrata("BACKGROUND")
 	Button:SetFrameLevel(15)

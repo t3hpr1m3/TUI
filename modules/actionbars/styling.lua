@@ -36,7 +36,7 @@ local function style_button(self)
 		normal:SetPoint("TOPLEFT")
 		normal:SetPoint("BOTTOMRIGHT")
 	end
-	--TUI.Skin(self)
+	--F.Skin(self)
 end
 
 for i = 1, 12 do

@@ -18,7 +18,7 @@ F.Scale = function(x) return Scale(x) end
 local function Size(frame, w, h)
 	frame:SetSize(Scale(w), Scale(h or w))
 end
-F.Size = function(frame, w, h) return Size(frame, w, h)
+F.Size = function(frame, w, h) return Size(frame, w, h) end
 
 local function Panelize(frame)
 	frame:Skin()
@@ -26,17 +26,17 @@ local function Panelize(frame)
 		self:SetBackdropBorderColor(unpack(F.GetSkin()["backdropBorderColorHighlight"]))
 	end)
 	frame:SetScript("OnLeave", function(self, event)
-		self:SetBackdropBorderColor(unpack(TUI:GetSkin()["backdropBorderColor"]))
+		self:SetBackdropBorderColor(unpack(F.GetSkin()["backdropBorderColor"]))
 	end)
 end
-TUI.Panelize = function(frame) return Panelize(frame) end
+F.Panelize = function(frame) return Panelize(frame) end
 
 local skin = {
 	["name"] = "none"
 }
 local function GetSkin()
 	local skin_name = "default"
-	local raw_skin = C[skin_name]
+	local raw_skin = C["skins"][skin_name]
 	if skin["name"] ~= skin_name then
 		print("converting skin")
 		skin["name"] = skin_name
@@ -78,7 +78,7 @@ local function Skin(frame)
 	elseif frameType == ("CheckButton") then
 	end
 end
-TUI.Skin = function(frame) return Skin(frame) end
+F.Skin = function(frame) return Skin(frame) end
 
 local function Fit(parent, obj)
 	local width = parent:GetWidth()

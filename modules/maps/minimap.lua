@@ -1,13 +1,5 @@
 local F, C = unpack(select(2, ...))
 
-local TUIMinimap = CreateFrame("Frame", "TUIMinimap", UIParent)
-TUIMinimap:RegisterEvent("ADDON_LOADED")
-TUIMinimap:SetPoint("TOPRIGHT", F.Scale(-50), F.Scale(-50))
-TUIMinimap:Size(200)
-TUIMinimap:SetFrameStrata("BACKGROUND")
-TUIMinimap:SetFrameLevel(1)
-TUIMinimap:Panelize()
-
 MinimapCluster:UnregisterAllEvents()
 MinimapCluster.Show = F.noop
 MinimapCluster:Hide()

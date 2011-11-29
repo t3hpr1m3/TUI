@@ -10,4 +10,5 @@
 	<Script file="modules\actionbars\bar1.lua"/>
 	<Script file="modules\actionbars\bar2.lua"/>
 	<Script file="modules\actionbars\hide.lua"/>
+	<Script file="modules\micromenu\init.lua"/>
 </Ui>

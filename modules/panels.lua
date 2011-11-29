@@ -1,3 +1,4 @@
+local F, C = unpack(select(2, ...))
 
 --local TUIBar1 = CreateFrame("Frame", "TUIBar1", UIParent, "SecureHandlerStateTemplate")
 --TUIBar1:CreatePanel("Default", 1, 1, "BOTTOM", UIParent, "BOTTOM", 0, 14)
@@ -6,5 +7,27 @@
 --TUIBar1:SetFrameStrata("BACKGROUND")
 --TUIBar1:SetFrameLevel(1)
 --TUIBar1:Panelize()
+
+local TUIMinimap = CreateFrame("Frame", "TUIMinimap", UIParent)
+TUIMinimap:RegisterEvent("ADDON_LOADED")
+TUIMinimap:SetPoint("TOPRIGHT", F.Scale(-50), F.Scale(-50))
+TUIMinimap:Size(200)
+TUIMinimap:SetFrameStrata("BACKGROUND")
+TUIMinimap:SetFrameLevel(1)
+TUIMinimap:Panelize()
+
+local TUIInfoLeft = CreateFrame("Frame", "TUIInfoLeft", TUIMinimap)
+TUIInfoLeft:SetPoint("TOPLEFT", TUIMinimap, "BOTTOMLEFT", 0, F.Scale(-2))
+TUIInfoLeft:SetSize(TUIMinimap:GetWidth() / 2 - F.Scale(1), F.Scale(20))
+TUIInfoLeft:SetFrameStrata("BACKGROUND")
+TUIInfoLeft:SetFrameLevel(1)
+TUIInfoLeft:Panelize()
+
+local TUIInfoRight = CreateFrame("Frame", "TUIInfoRight", TUIMinimap)
+TUIInfoRight:SetPoint("TOPRIGHT", TUIMinimap, "BOTTOMRIGHT", 0, F.Scale(-2))
+TUIInfoRight:SetSize(TUIMinimap:GetWidth() / 2 - F.Scale(1), F.Scale(20))
+TUIInfoRight:SetFrameStrata("BACKGROUND")
+TUIInfoRight:SetFrameLevel(1)
+TUIInfoRight:Panelize()
 
 print("panels loaded")

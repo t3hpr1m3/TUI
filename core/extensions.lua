@@ -6,7 +6,8 @@ local scale = 1
 if GetCVar("useUiScale") == "1" then
 	scale = GetCVar("uiScale")	
 end
-scale = .71
+--scale = .71
+scale = .85
 local mult = (768 / string.match(GetCVar("gxResolution"), "%d+x(%d+)")) / scale
 C.mult = mult
 
